@@ -20,6 +20,9 @@ runs:
       with:
         python-version: '3.9'
 
+    - name: Install pyyaml
+      run: pip install pyyaml
+
     - name: Set GitHub Path
       run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH; ls $GITHUB_PATH
       shell: bash
@@ -31,7 +34,7 @@ runs:
         python ${{ github.action_path }}/move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
       shell: bash
 
-    - name: Run move script
+    - name: Run update script
       run: |
         python ${{ github.action_path }}/update_mkdocsyml.py ${{ inputs.dest_dir }}
       shell: bash
