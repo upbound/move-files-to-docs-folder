@@ -28,5 +28,5 @@ runs:
         
     - name: Run move script
       run: |
-        ${{ github.action_path }}/python move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
+        python ${{ github.action_path }}/move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
       shell: bash
