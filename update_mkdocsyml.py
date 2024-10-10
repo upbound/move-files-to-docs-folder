@@ -34,6 +34,8 @@ def generate_nav(markdown_files):
                 nav_list.append({key: build_nav_dict(value)})
             else:
                 title = os.path.splitext(os.path.basename(value))[0].replace('-', ' ').title()
+                if title.lower() == 'index':
+                    title = 'Home'
                 nav_list.append({title: value})
         return nav_list
 

@@ -33,7 +33,7 @@ def copy_specific_files(src_dir, dest_dir):
                     os.makedirs(dest_subdir)
                 
                 # Construct the destination file path
-                if file == "README.md":
+                if file == "README.md" and root == src_dir:
                     dest_file_path = os.path.join(dest_subdir, "index.md")
                 else:
                     dest_file_path = os.path.join(dest_subdir, file)
