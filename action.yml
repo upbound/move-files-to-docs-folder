@@ -30,3 +30,8 @@ runs:
       run: |
         python ${{ github.action_path }}/move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
       shell: bash
+
+    - name: Run move script
+      run: |
+        python ${{ github.action_path }}/update_mkdocsyml.py ${{ inputs.dest_dir }}
+      shell: bash
