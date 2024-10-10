@@ -1,0 +1,31 @@
+name: move-then-publish-tech-docs
+
+description: "A composite action to move specific file types from source to destination."
+
+inputs:
+  src_dir:
+    description: "The source directory to search forTechDocs compatible files"
+    default: .
+    type: string
+  dest_dir:
+    default: docs
+    description: "The destination directory where TechDocs compatible files will be moved"
+    type: string
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Python 3.9
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: Set GitHub Path
+      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+      shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
+        
+    - name: Run move script
+      run: |
+        python move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
