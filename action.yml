@@ -29,3 +29,4 @@ runs:
     - name: Run move script
       run: |
         python move_md_files.py ${{ inputs.src_dir }} ${{ inputs.dest_dir }}
+      shell: bash
