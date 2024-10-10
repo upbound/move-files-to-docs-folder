@@ -22,6 +22,7 @@ runs:
 
     - name: Install pyyaml
       run: pip install pyyaml
+      shell: bash
 
     - name: Set GitHub Path
       run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH; ls $GITHUB_PATH
