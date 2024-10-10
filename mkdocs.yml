@@ -1,0 +1,7 @@
+site_name: 'move-files-to-docs-folder'
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core

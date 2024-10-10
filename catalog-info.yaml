@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "move-files-to-docs-folder"
+  description: "Move files to docs folder github action "
+  annotations:
+    github.com/project-slug: upbound/move-files-to-docs-folder
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/team-platform

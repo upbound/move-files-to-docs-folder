@@ -1,0 +1,15 @@
+name: publish-techdocs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+jobs:
+  call-publish-techdocs:
+    uses: upbound/reusable-workflows/.github/workflows/publish-techdocs.yml@main
+    with:
+      entity_name: 'move-files-to-docs-folder'
